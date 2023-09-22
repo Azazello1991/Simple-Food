@@ -1,0 +1,117 @@
+
+.app {
+   position: relative;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: right;
+   background-image: url('../images/app.webp');
+   z-index: 1;
+
+   @include r(992) { 
+      background-size: cover;
+      background-position: center 80%;
+   }
+   @include r(576) { 
+      background: none;
+   }
+
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(249, 250, 255, 0);
+
+      @include r(992) { 
+         background-color: rgba(249, 250, 255, 0.85);
+      }
+   }
+
+		&__wrapper {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         max-width: 42%;
+         min-height: 380px;
+
+         @include r(992) { 
+            max-width: 60%;
+            min-height: 350px;
+         }
+
+         @include r(768) { 
+            max-width: 100%;
+            min-height: 300px;
+         }
+         @include r(576) { 
+            min-height: fit-content;
+         }
+		}
+      
+		&__title {
+         font-size: 36px;
+         text-align: left;
+         margin-bottom: 45px;
+         z-index: 2;
+
+         @include r(768) { 
+            font-size: 24px;
+            margin-bottom: 15px;
+            max-width: 50%;
+         }
+
+         @include r(576) { 
+            max-width: 70%;
+         }
+		}
+
+		&__text {
+         opacity: 0.9;
+         font-size: 20px;
+         line-height: 1.5;
+         margin-bottom: 30px;
+
+         @include r(768) { 
+            font-size: 14px;
+            margin-bottom: 15px;
+         }
+		}
+
+		&__footer {
+         display: flex;
+         z-index: 2;
+		}
+
+		&__link {
+         display: block;
+         width: 135px;
+         height: 40px;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         border-radius: 5px;
+
+         &:not(:last-child){
+            margin-right: 30px;
+         }
+
+         &:focus {
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
+            border-radius: 5px;
+         }
+         &:hover {
+            box-shadow: 0px 0px 5px 2px rgba(255, 104, 56, 0.70);
+
+         }
+
+         &:active {
+            background-size: cover;
+            background-position: center;
+            transform: translate(1px, 2px);
+         }
+		}
+}

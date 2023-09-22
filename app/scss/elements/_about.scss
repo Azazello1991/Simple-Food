@@ -1,0 +1,100 @@
+.about {
+   position: relative;
+   max-width: 1030px;
+   margin: 0 auto 120px;
+   padding: 58px 0;
+   background: url('../images/foodDelivery.png') left/ contain no-repeat;
+   display: flex;
+   justify-content: end;
+
+   @include r(992) { 
+      margin-bottom: 40px;
+   }
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(249, 250, 255, 0);
+
+         @include r(992) { 
+            background-color: rgba(249, 250, 255, 0.85);
+         }
+      }
+
+		&__content {
+         max-width: 470px;
+         justify-content: center;
+         z-index: 2;
+		}
+
+		&__title {
+         margin-bottom: 30px;
+         text-align: left;
+		}
+
+      &__title-clice {
+         display: block;
+      }
+
+		&__giper-text {
+         margin-bottom: 30px;
+
+         & p {
+            line-height: 1.5;
+
+            @include r(576) { 
+               font-size: 16px;
+            }
+         }
+		}
+}
+.advantages {
+   margin-bottom: 30px;
+
+		&__advantag {
+         margin-bottom: 20px;
+
+         @include r(576) { 
+            font-size: 18px;
+         }
+		}
+
+      &__btn {
+         @include r(576) { 
+            font-size: 14px;
+         }
+      }
+}
+
+.advantag {
+
+		&__icon {
+         background-position: center;
+         background-size: contain;
+         background-repeat: no-repeat;
+         height: 20px;
+         width: 20px;
+         display: inline-block;
+         margin-right: 20px;
+         
+         &--timer {
+            background-image: url('../images/sprite.svg#icon-timer');
+            filter: invert(48%) sepia(67%) saturate(1388%) hue-rotate(335deg) brightness(99%) contrast(104%);;
+         }
+   
+         &--delivery {
+            background-image: url('../images/sprite.svg#icon-delivery');
+            filter: invert(49%) sepia(56%) saturate(2945%) hue-rotate(172deg) brightness(100%) contrast(111%);
+         }
+   
+         &--restorants {
+            background-image: url('../images/sprite.svg#icon-restorant');
+            filter: invert(23%) sepia(84%) saturate(3065%) hue-rotate(348deg) brightness(98%) contrast(106%);
+         }
+		}
+}
+

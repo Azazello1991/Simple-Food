@@ -1,0 +1,39 @@
+$accent: #ff6838;
+$fontColor: #31352B;
+$titleColor: #363853;
+$silver100: #C2C2C2;
+$silverLight: #C1C1C1;
+$orangeLight: #ECECEC;
+$orange300: #FAEDED;
+
+// fonts
+%rubik-300{
+   font-family: 'Rubik-300';
+   font-weight: 300;
+}
+%rubik-400{
+   font-family: 'Rubik-400';
+   font-weight: 400;
+}
+%rubik-500{
+   font-family: 'Rubik-500';
+   font-weight: 500;
+}
+%rubik-italic{
+   font-family: 'Rubik-italic';
+   font-weight: 400;
+}
+
+// Swiper
+$themeColor: #007aff !default;
+$colors: (
+  'white': #ffffff,
+  'black': #000000,
+) !default;
+
+
+// burger
+$burgerWidth: 30px; //ширина линий - 30px
+$burgerHeight: 20px; //высота линий - 20px
+$burgerLineHeight: 2px; //высота линий 
+$burgerColor: #363853; //цвет 

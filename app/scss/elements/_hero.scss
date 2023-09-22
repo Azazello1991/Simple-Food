@@ -1,0 +1,100 @@
+
+.hero {
+   height: calc(100vh - 161px);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: right;
+   position: relative;
+
+   @include r(992) { 
+      margin-bottom: 40px;
+   }
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(249, 250, 255, 0);
+
+         @include r(992) { 
+            background-color: rgba(249, 250, 255, 0.85);
+         }
+      }
+
+		&__content {
+         position: relative;
+         max-width: 40%;
+         min-height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+
+         @include r(992) { 
+            max-width: 80%;
+            margin: 0 auto;
+         }
+		}
+
+		&__title {
+         font-weight: 500;
+         line-height: 130%;
+         font-size: 66px;
+         margin-bottom: 20px;
+         color: $titleColor;
+         @extend %rubik-500;
+         max-width: 50%;
+
+         @include r(768) { 
+            font-size: 54px;
+         }
+
+         @include r(576) { 
+            font-size: 40px
+         }
+		}
+
+		&__title-slice {
+         white-space: nowrap;
+         color: $accent;
+         text-transform: uppercase;
+		}
+
+		&__prev {
+         line-height: 1.5;
+         margin-bottom: 20px;
+
+         @include r(576) { 
+            font-size: 16px;
+         }
+		}
+
+		&__btns {
+         display: flex;
+         align-items: center;
+		}
+
+		&__btn {
+         font-style: 18px;
+         letter-spacing: 0.54px;
+         margin-right: 35px;
+
+         @include r(576) { 
+            padding: 8px 24px;
+            font-size: 14px;
+         }
+		}
+      
+		&__link {
+         text-decoration-line: underline;
+         line-height: 1.5;
+
+         @include r(576) { 
+            font-size: 16px;
+         }
+		}
+}
+
+

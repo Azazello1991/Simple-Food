@@ -1,0 +1,74 @@
+<div class="tab comments hidden" name="tab[3]">
+   <h2 class="comments__title">Мнения наших клиентов</h2>
+
+   <ul class="comments__list">
+      <li class="comments__item">
+         <figure class="comments__wrapper">
+            <div class="comments__head">
+               <div class="comments__user">
+                  <div class="comments__photo">
+                     <img class="comments__avatar" src="./images/user-avatar.jpg" alt="фото клиента">
+                  </div>
+                  <figcaption class="comments__user-data">
+                     <h3 class="comments__name">Андрей</h3>
+                     <time class="comments__date" datetime="2021-06-10">10.06.2021</time>
+                  </figcaption>
+               </div>
+               <div class="stars static-stars comments__stars" data-stars="5"></div>
+            </div>
+            <blockquote class="comments__comment">
+               Доставили быстро. Товар свежий и очень вкусный, буду пробовать еще!))
+            </blockquote>
+         </figure>
+      </li>
+      <li class="comments__item">
+         <figure class="comments__wrapper">
+            <div class="comments__head">
+               <div class="comments__user">
+                  <div class="comments__photo">
+                     <img class="comments__avatar" width="70" height="70" src="./images/user-avatar.jpg" alt="фото клиента">
+                  </div>
+                  <figcaption class="comments__user-data">
+                     <h3 class="comments__name">Екатерина Белая</h3>
+                     <time class="comments__date" datetime="2021-06-07">7.06.2021</time>
+                  </figcaption>
+               </div>
+               <div class="stars static-stars comments__stars" data-stars="4"></div>
+            </div>
+            <blockquote class="comments__comment">
+               этот бургер неплохой чтобы перекусить, когда нет возможности или времени что-нибудь приготовить. Это отличный вариант, чтобы съесть на ходу, но чтобы побаловать себя, я больше предпочту пиццу
+            </blockquote>
+         </figure>
+      </li>
+   </ul>
+   
+
+
+   <h2 class="comments__title">Оставить отзыв</h2>
+
+   <form class="form-tab" action="#" method="post">
+      <div class="form-tab__grade-wrapper">
+         <span class="form-tab__grade">Ваша оценка *</span>
+         <div class="stars rating-stars form__stars"></div>
+      </div>
+      <div class="form-tab__filds">
+         <div class="form-tab__textarea-wrapper">
+            <label class="form-tab__label" for="comment-textarea">Ваш отзыв *</label>
+            <textarea class="form-tab__fild form-tab__fild--textarea" name="textarea" id="comment-textarea" cols="30" rows="10" placeholder="Ведите текст отзыва"></textarea>
+         </div>
+         <div class="form-tab__inputs">
+            <label class="form-tab__label" for="name">Имя</label>
+            <input class="form-tab__fild form-tab__fild--name" id="name" type="text" placeholder="Введите ваше имя">
+            
+            <label class="form-tab__label" for="gmail">Email *</label>
+            <input class="form-tab__fild form-tab__fild--email" id="gmail" type="email" placeholder="youremail@mail.com" required>
+         </div>
+      </div>
+      <div class="form-tab__checkbox-wrapper">
+         <input class="form-tab__checkbox sr-only" type="checkbox" id="heckbox-tab" name="mail" placeholder="Ваш email" required>
+         <label class="form-tab__checkbox-label" for="heckbox-tab"></label>
+         <p class="form-tab__agreement">Сохранить моё имя, email и адрес сайта в этом браузере для последующих моих комментариев.</p>
+      </div>
+      <button class="btn form-tab__btn" type="submit">Оставить отзыв</button>
+   </form>
+</div>

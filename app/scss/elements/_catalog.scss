@@ -1,0 +1,411 @@
+
+.filter-top {
+   display: flex;
+
+		&__item {
+         position: relative;
+         font-size: 14px;
+         line-height: 1.2;
+         letter-spacing: 0.42px;
+
+         &:not(:last-child){
+            margin-right: 30px;
+         }
+		}
+
+		&__result {
+         position: relative;
+         border-radius: 3px;
+         border: 1px solid $silver100;
+         background: #ffffff;
+         padding: 15px 41px 15px 15px;
+         cursor: pointer;
+         transition: all 0.1s ease-in;
+
+         &.active::after {
+            transform: rotate(90deg);
+            top: 20px;
+         }
+
+         &::after {
+            content: '';
+            background-image: url('../images/sprite.svg#icon-right');
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 15px;
+            height: 10px;
+            transform: rotate(270deg);
+         }
+
+         &:focus{
+            border: 1px solid rgba(255, 104, 56, 0.70);
+         }
+
+         &:hover{
+            background-color: rgba(255, 255, 255, 0.10);
+            box-shadow: 0px 5px 12px 0px rgba(255, 104, 56, 0.20);
+            border: 1px solid rgba(255, 104, 56, 0.70);
+            color: $accent;
+         }
+      }
+
+      &__parameters {
+         position: absolute;
+         width: 100%;
+         top: 110%;
+         left: 0;
+         transition: all 0.2s ease-in;
+         overflow: hidden;
+         z-index: 10;
+      }
+
+		&__parameters.hidden {
+         height: 0;
+         overflow: hidden;
+		}
+
+		&__parameter {
+         border: 1px solid $silver100;
+         background-color: #F9FAFF;
+         padding: 15px;
+         margin-bottom: 1px;
+         text-align: center;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            color: $accent;
+         }
+
+         &:active {
+            text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.50);
+         }
+		}
+}
+
+.catalog {
+   margin-bottom: 120px;
+   
+      &__head {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 60px;
+         
+         @include r(768) {
+            display: block;
+            margin-bottom: 30px;
+         }
+      }
+
+      &__title {
+         text-align: left;
+         margin-bottom: 20px;
+      }
+
+		&__content {
+         display: grid;
+         grid-template-columns: minmax(auto, 270px) minmax(auto, 870px);
+         column-gap: 30px;
+
+         @include r(992) {
+            grid-template-columns: 1fr;
+         }
+		}
+
+      &__mobile-sidebar {
+         display: none;
+         position: relative;
+         width: 50px;
+         height: 50px;
+         margin-right: 10px;
+         border-radius: 3px;
+         background: #FAEDED;
+         border: 0 solid transparent;
+
+         @include r(992) {
+            display: block;
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: 32px 36px;
+            background-repeat: no-repeat;
+            background-image: url('../images/sprite.svg#icon-mobile-filter');
+         }
+      }
+} 
+
+.gallery {
+   &__list {
+         padding: 2px;
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         grid-auto-rows: 1fr;
+         overflow: hidden;
+         gap: 10px;
+         height: fit-content;
+         margin-bottom: 60px;
+         min-width: 100%;
+
+         @include r(992) {
+            grid-template-columns: repeat(3, 1fr);
+         }
+
+         @include r(576) {
+            grid-template-columns: repeat(2, 1fr);
+         }
+		}
+}
+
+.filters.show {
+   opacity: 1;
+   z-index: 99;
+   transform: translateX(0);
+}
+
+.filters {
+   @include r(992) { 
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.50);
+      opacity: 0;
+      z-index: -10;
+      transform: translateX(-200%);
+      transition: all 0.5s ease-in-out;
+   }
+
+   &__wrapper {
+      position: relative;
+
+      @include r(992) {
+         background-color: #ffffff;
+         padding-top: 80px;
+         max-width: 85%;
+         height: 100%;
+         overflow: hidden;
+         overflow-y: auto;
+      }
+   }
+
+   &__mobile-head {
+      display: none;
+
+      @include r(992) {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 85%;
+         padding: 20px;
+         display: flex;
+         justify-content: right;
+      }
+   }
+
+   &__closs-sidebar {
+      width: 40px;
+      height: 40px;
+   }
+}
+
+
+.filter {
+   margin-bottom: 30px;
+   max-width: 270px;
+
+   &__subtitle {
+      font-size: 24px;
+      line-height: 1.2; 
+      letter-spacing: 0.72px;
+      color: $titleColor;
+      border-radius: 5px;
+      border: 1px solid $orangeLight;
+      padding: 15px;
+      background-color: #ffffff;
+   }
+   
+   &__items {
+      border: 1px solid $orangeLight;
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 25px 15px;
+   }
+
+	&__item {
+      &:not(:last-child){
+         margin-bottom: 20px;
+      }
+	}
+
+   &__button {
+      border: 0 solid transparent;
+      background-color: #ffffff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1.3;
+      letter-spacing: 0.54px;
+   }
+
+   &__checkbox:checked + .filter__label::before {
+      background-image: url('../images/sprite.svg#icon-check');
+      background-size: 12px 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid $titleColor;
+   }
+
+   &__checkbox:focus + .catalog__label::before {
+      border: 2px solid $accent;
+   }
+
+   &__label:hover::before {
+      border: 2px solid $accent;
+   }
+
+   &__label:hover {
+      color: $accent;
+   }
+
+	&__label {
+      position: relative;
+      padding-left: 30px;
+      font-size: 18px;
+      line-height: 1.3;
+      letter-spacing: 0.54px;
+      transition: all 0.3s ease-in;
+      cursor: pointer;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 24px;
+         height: 24px;
+         border-radius: 3px;
+         background-color: rgba(255, 104, 56, 0.20);
+      }
+	}
+}
+
+.filter-price {
+   max-width: 270px;
+
+   &__fild-wrapper {
+      display: flex;
+      align-items: center;
+      
+      &:not(:last-child){
+         margin-right: 20px;
+      }
+   }
+
+	&__inner {
+      border: 1px solid $orangeLight;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 25px 15px;
+	}
+
+	&__filds {
+      display: flex;
+      margin-bottom: 25px;
+	}
+
+	&__fild {
+      padding: 12px 10px;
+      border-radius: 3px;
+      border: 1px solid $orange300;
+      background-color: $orange300;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.48px;
+      max-width: 70px;
+      display: block;
+      margin: 0 5px;
+      outline: 0px solid transparent;
+      &:focus{
+         border: 1px solid $accent;
+      }
+	}
+
+   &__before-fild {
+      letter-spacing: 0.48px;
+      font-size: 16px;
+      line-height: 1;
+      color: $silver100;
+   }
+
+   &__after-fild {
+      letter-spacing: 0.48px;
+      font-size: 16px;
+      line-height: 1;
+      color: $silver100;
+   }
+
+
+   .noUi-target {
+      height: 2px;
+   }
+
+   .noUi-connect {
+      background-color: $accent;
+   }
+   .noUi-connects {
+      background-color: $orangeLight;
+      height: 2px;
+   }
+
+   .noUi-handle {
+      width: 18px;
+      height: 18px;
+      background-color: $accent;
+      border-radius: 50%;
+      box-shadow: none;
+      top: -8px;
+      &::before {
+         display: none;
+      }
+      &::after {
+         display: none;
+      }
+   }
+}
+
+.new--sale {
+   color: $accent;
+   border: 1px solid $accent;
+}
+
+.new--new {
+   color: rgb(9, 247, 116);
+   border: 1px solid rgb(9, 247, 116);
+}
+
+.new--hit {
+   color: rgb(170, 31, 31);
+   border: 1px solid rgb(170, 31, 31);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

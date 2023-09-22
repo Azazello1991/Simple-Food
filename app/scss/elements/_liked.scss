@@ -1,0 +1,34 @@
+.liked {
+
+	&__head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+	}
+
+	&__title {
+      font-size: 36px;
+      @extend %rubik-500;
+	}
+
+	&__arrows {
+      display: flex;
+      column-gap: 25px;
+	}
+
+	&__prev {
+	}
+
+	&__next {
+	}
+
+	&__slider {
+      padding: 2px 2px;
+      margin-bottom: 120px;
+	}
+
+	&__slider-wrapper {
+	}
+}
+
+

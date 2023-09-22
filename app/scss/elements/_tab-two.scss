@@ -1,0 +1,15 @@
+.characteristics {
+
+		&__parameter {
+         display: block;
+         line-height: 1.5;
+		}
+
+      &__category {
+         @extend %rubik-500;
+      }
+
+      &__parameter:not(:last-child){
+         margin-bottom: 10px;
+      }
+}

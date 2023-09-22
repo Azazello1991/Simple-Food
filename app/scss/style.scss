@@ -1,0 +1,35 @@
+@import '../../node_modules/swiper/swiper-bundle'; 
+@import '../../node_modules/nouislider/dist/nouislider'; 
+@import '../../node_modules/starry-rating/dist/starry'; 
+@import '../../node_modules/lightgallery/css/lightgallery'; 
+@import '../../node_modules/lightgallery/scss/lg-pager';
+/* БЕЗ .css !!!!!(Импортируем содержимое, а не строку) */
+
+@import "reset";
+@import "fonts";
+@import "vars";
+@import "global";
+@import "mixins";
+@import "./elements/header";
+@import "./elements/burger-menu";
+@import "./elements/mobile-menu-index";
+@import "./elements/hero";
+@import "./elements/gallery";
+@import "./elements/about";
+@import "./elements/restorans";
+@import "./elements/comments";
+@import "./elements/app";
+@import "./elements/footer";
+
+@import "./elements/bread-crumbs";
+@import "./elements/catalog";
+@import "./elements/pagination";
+@import "./elements/discount";
+
+@import "./elements/description";
+@import "./elements/product";
+@import "./elements/tabs";
+@import "./elements/tab-one";
+@import "./elements/tab-two";
+@import "./elements/tab-three";
+@import "./elements/liked";

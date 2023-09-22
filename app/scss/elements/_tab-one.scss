@@ -1,0 +1,10 @@
+.description-tab {
+
+		&__text {
+         line-height: 1.5;
+		}
+
+      &__text:not(:last-child){
+         margin-bottom: 30px;
+      }
+}
