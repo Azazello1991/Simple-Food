@@ -163,13 +163,17 @@
       text-decoration-line: underline;
       border: 0 solid transparent;
       background-color: transparent;
+      cursor: pointer;
 	}
 }
 
 .card {
+   display: flex;
+   justify-content: center;
    position: relative;
    box-shadow: 0px 0px 0px 1px #ECECEC;
    max-width: 210px;
+   min-height: 260px;
    height: 100%;
    padding: 20px 15px;
    border-radius: 5px;

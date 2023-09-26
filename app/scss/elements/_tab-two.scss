@@ -1,4 +1,7 @@
 .characteristics {
+   @include r(576) { 
+      font-size: 16px;
+   }
 
 		&__parameter {
          display: block;
@@ -11,5 +14,9 @@
 
       &__parameter:not(:last-child){
          margin-bottom: 10px;
+         
+         @include r(576) { 
+            margin-bottom: 15px;
+         }
       }
 }

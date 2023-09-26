@@ -3,23 +3,33 @@
    display: flex;
    column-gap: 30px;
    padding: 5px 0;
-   border-bottom: 1px solid #E4E4E4;
+   margin-bottom: 60px;
+
+   @include r(992) { 
+      display: block;
+   }
+
+   @include r(576) { 
+      margin-bottom: 30px;
+   }
 
       &__img {
-         padding: 75px 105px;
-         max-width: 400px;
-         max-height: 400px;
-         width: 100%;
-         height: 100%;
          box-shadow: 0px 0px 0px 1px $orangeLight;
          border-radius: 5px;
          background-color: #ffffff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         @include r(576) { 
+            padding: 23px 0;
+         }
       }
 
 		&__photo {
-         width: 100%;
-         height: 100%;
          object-fit: cover;
+         width: 300px;
+         height: 300px;
 		}
 
 		&__description {
@@ -27,6 +37,12 @@
 
 		&__title {
          margin-bottom: 30px;
+
+         @include r(576) { 
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: left;
+         }
 		}
 
       &__stars {
@@ -50,10 +66,19 @@
          line-height: 1.2;
          letter-spacing: 0.72px;
          margin-bottom: 35px;
+
+         @include r(576) { 
+            font-size: 18px;
+            margin-bottom: 30px;
+         }
 		}
 
 		&__text {
          margin-bottom: 20px;
+
+         @include r(576) { 
+            margin-bottom: 15px;
+         }
 		}
 
       &__text-item {
@@ -66,17 +91,47 @@
 		&__link {
          font-size: 20px;
          text-decoration-line: underline;
+
+         @include r(576) { 
+            font-size: 16px;
+         }
 		}
 }
 
 .order {
    display: flex;
+   align-items: center;
    column-gap: 20px;
    margin-bottom: 30px;
+
+   @include r(1130) { 
+      display: block;
+   }
+
+   @include r(992) { 
+      display: flex;
+   }
+
+   @include r(576) { 
+      display: block;
+      margin-bottom: 30px;
+   }
 
 		&__inner {
          display: flex;
          align-items: center;
+
+         @include r(1130) { 
+            margin-bottom: 20px;
+         }
+
+         @include r(992) { 
+            margin-bottom: 0;
+         }
+
+         @include r(576) { 
+            margin-bottom: 15px;
+         }
 		}
 
 		&__btn {
@@ -154,6 +209,10 @@
    height: 100%;
    width: 100%;
    padding: 0 50px;
+
+   @include r(576) { 
+      display: none;
+   }
 }
 .product__btn-slider {
    position: relative;
@@ -202,10 +261,24 @@
    transform: rotate(180deg);
 }
 
-.swiper--product {
+.swiper-product {
+   border-radius: 5px;
+   box-shadow: 0px 0px 0px 1px #ECECEC;
    position: relative;
    max-width: 610px;
    max-height: 550px;
+
+   @include r(992) { 
+      max-width: 510px;
+      max-height: 450px;
+      margin-bottom: 40px;
+   }
+
+   @include r(568) { 
+      max-width: 510px;
+      max-height: 345px;
+      margin-bottom: 30px;
+   }
 }
 
 

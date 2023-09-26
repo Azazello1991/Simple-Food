@@ -10,6 +10,10 @@
       margin-bottom: 40px;
    }
 
+   @include rh(576) { 
+      margin-bottom: 80px;
+   }
+
       &::before {
          content: '';
          position: absolute;
@@ -49,6 +53,10 @@
 
          @include r(768) { 
             font-size: 54px;
+         }
+
+         @include rh(568) { 
+            font-size: 40px;
          }
 
          @include r(576) { 

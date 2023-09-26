@@ -7,24 +7,34 @@
    width: 100%;
    background: rgba(0, 0, 0, 0.50);
    z-index: 99;
+   opacity: 1;
+   visibility: visible;
    transform: translateX(0);
    transition: all 0.5s ease-in-out;
+   
 
 		&__wrapper {
+         position: relative;
          background-color: #ffffff;
          max-width: 90%;
          height: 100%;
          z-index: 100;
          padding: 0 15px;
-         overflow: hidden;
+         overflow-y: auto;
+         padding-top: 90px;
 		}
 
 		&__head {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 90%;
          display: flex;
          justify-content: space-between;
          align-items: center;
-         padding: 25px 25px 25px 0;
+         padding: 25px 25px 25px 15px;
          border-bottom: 1px solid $silver100;
+         background-color: #ffffff;
 		}
 
 		&__nav {
@@ -60,6 +70,7 @@
 
 .mobile-menu-index.menu-hidden {
    overflow: hidden;
+   visibility: hidden;
    opacity: 0;
    z-index: -10;
    transform: translateX(-200%);

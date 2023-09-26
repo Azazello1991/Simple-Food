@@ -282,6 +282,22 @@ if (sideBarOpen) {
 };
 
 
+if (window.matchMedia("(max-width: 768px)").matches) {
+   const discountSlider = new Swiper('.discount__slider', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      pagination: {
+         el: ".discount__dots",
+         bulletClass: 'swiper-dot',
+         bulletActiveClass: 'swiper-dot--active',
+         clickable: true
+      }
+   });
+}
+
+
 
 // ==================================== product.html ===================================== //
 
@@ -321,8 +337,11 @@ function showTab(e) {
 
 // --------------swiper product----------------- //
 if (tabs) {
-   const swiper = new Swiper('.swiper--product', {
-      loop: true,
+   const swiper = new Swiper('.swiper-product', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
    
      // If we need pagination
       pagination: {
@@ -344,13 +363,35 @@ if (tabs) {
    const swiper = new Swiper('.liked__slider', {
      // Navigation arrows
       navigation: {
-         nextEl: '.liked__prev',
-         prevEl: '.liked__next',
+         nextEl: '.liked__btn--prev',
+         prevEl: '.liked__btn--next',
+      },
+      pagination: {
+         el: ".liked__dots",
+         bulletClass: 'swiper-dot',
+         bulletActiveClass: 'swiper-dot--active',
+         clickable: true
       },
       breakpoints: {
          1200: {
             slidesPerView: 5,
             spaceBetween: 30,
+         },
+         992: {
+            slidesPerView: 5,
+            spaceBetween: 25,
+         },
+         768: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+         },
+         576: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+         },
+         325: {
+            slidesPerView: 2,
+            spaceBetween: 5,
          },
       },
    });    
@@ -432,21 +473,6 @@ if (lightBox) {
       getCaptionFromTitleOrAlt: false // підпис до залереї
    })
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

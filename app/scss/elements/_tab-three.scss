@@ -1,198 +1,235 @@
-.tab {
-}
 .comments {
 
-		&__title {
-         margin-bottom: 30px;
-         color: $titleColor;
-         @extend %rubik-500;
-         line-height: 1.2;
-         letter-spacing: 0.72px;
-         font-size: 24px;
-		}
-
-      &__list {
-         margin-bottom: 60px;
-      }
-
-      &__item:not(:last-child){
-         margin-bottom: 30px;
-      }
-
-		&__wrapper:not(:last-child) {
-         padding: 25px 0 20px 0;
+   &__item{
+      &:not(:last-child) {
          border-bottom: 1px solid #E4E4E4;
-		}
+         padding-bottom: 20px;
+      }
+   }
+      
 
-		&__head {
-         display: flex;
-         justify-content: space-between;
-         margin-bottom: 20px;
-		}
+	&__title {
+      margin-bottom: 30px;
+      color: $titleColor;
+      @extend %rubik-500;
+      line-height: 1.2;
+      letter-spacing: 0.72px;
+      font-size: 24px;
 
-		&__user {
-         display: flex;
-		}
+      @include r(576) { 
+         font-size: 20px;
+      }
+	}
 
-		&__photo {
-         width: 70px;
-         height: 70px;
-         margin-right: 25px;
-		}
+   &__list {
+      margin-bottom: 60px;
 
-		&__avatar {
-         border-radius: 50%;
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-		}
+      @include r(576) { 
+         margin-bottom: 45px;
+      }
+   }
 
-		&__user-data {
-		}
+   &__item:not(:last-child){
+      margin-bottom: 30px;
+   }
 
-		&__name {
-         @extend %rubik-500;
-         color: #505050;
-         margin-bottom: 10px;
-		}
+	&__wrapper:not(:last-child) {
+      padding: 25px 0 20px 0;
+      border-bottom: 1px solid #E4E4E4;
+	}
 
-		&__date {
-         font-size: 18px;
-         letter-spacing: 0.54px;
-         color: #505050;
-		}
+	&__head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
 
-		&__rating {
-		}
+      @include r(576) { 
+         display: block;
+         margin-bottom: 15px;
+      }
+	}
 
-		&__comment {
-         color: #505050;
-         line-height: 1.5;
-		}
+	&__user {
+      display: flex;
+
+      @include r(576) { 
+         margin-bottom: 15px;
+      }
+	}
+
+	&__photo {
+      width: 70px;
+      height: 70px;
+      margin-right: 25px;
+	}
+
+	&__avatar {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+	}
+
+	&__user-data {
+	}
+
+	&__name {
+      @extend %rubik-500;
+      color: #505050;
+      margin-bottom: 10px;
+	}
+
+	&__date {
+      font-size: 18px;
+      letter-spacing: 0.54px;
+      color: #505050;
+	}
+
+	&__rating {
+	}
+
+	&__comment {
+      color: #505050;
+      line-height: 1.5;
+
+      @include r(576) { 
+         font-size: 16px;
+      }
+	}
 }
 
 
 .form-tab {
 
-		&__grade-wrapper {
-         display: flex;
+	&__grade-wrapper {
+      display: flex;
+      margin-bottom: 20px;
+      column-gap: 15px;
+	}
+
+	&__grade {
+      color: #505050;
+	}
+
+	&__stars {
+	}
+
+	&__filds {
+      display: flex;
+      column-gap: 30px;
+      margin-bottom: 30px;
+
+      @include r(576) { 
+        flex-direction: column;
+      }
+	}
+
+   &__textarea-wrapper {
+      max-width: 400px;
+      width: 100%;
+
+      @include r(576) { 
          margin-bottom: 20px;
-         column-gap: 15px;
-		}
+      }
+   }
 
-		&__grade {
-         color: #505050;
-		}
+	&__label {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 15px;
+	}
 
-		&__stars {
-		}
+	&__fild {
+      border: 1px solid $silver100;
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 15px;
 
-		&__filds {
-         display: flex;
-         column-gap: 30px;
-         margin-bottom: 30px;
-		}
-
-      &__textarea-wrapper {
-         max-width: 400px;
-         width: 100%;
+      &::placeholder {
+         font-size: 14px;
+         color: $silverLight;
+         line-height: 1;
       }
 
-		&__label {
-         display: block;
-         font-size: 20px;
-         margin-bottom: 15px;
-		}
-
-		&__fild {
-         border: 1px solid $silver100;
-         background: #ffffff;
-         border-radius: 5px;
-         padding: 15px;
-
-         &::placeholder {
-            font-size: 14px;
-            color: $silverLight;
-            line-height: 1;
-         }
-
-         &:focus {
-            border-radius: 5px;
-            border: 1px solid $accent;
-            background: #FFF;
-            box-shadow: 0px 0px 0px 2px $accent;
-            outline: 0px solid transparent;
-         }
-
-         &:hover::placeholder {
-            color: $titleColor;
-         }
-		}
-
-      &__fild--textarea {
-         height: 165px;
-         max-width: 400px;
-         width: 100%;
-         resize: vertical;
-      }
-
-		&__label {
-		}
-
-		&__inputs {
-         margin-bottom: 30px;
-		}
-
-      &__fild--name {
-         margin-bottom: 10px;
-      }
-
-      &__fild.form-tab__fild--name,
-      &__fild.form-tab__fild--email {
-         max-width: 260px;
-      }
-
-		&__checkbox-wrapper {
-         display: flex;
-         margin-bottom: 30px;
-		}
-
-      &__checkbox:focus .form-tab__checkbox-label {
+      &:focus {
+         outline: 0px solid transparent;
          border: 2px solid $accent;
       }
 
-		&__checkbox:checked + .form-tab__checkbox-label::before {
-         content: '';
-         position: absolute;
-         top: 2px;
-         left: 2px;
-         right: 2px;
-         bottom: 2px;
-         background-color: $accent;
-		}
-
-		&__checkbox-label {
-         position: relative;
-         display: block;
-         min-width: 24px;
-         height: 24px;
-         border: 1px solid $silverLight;
-         background-color: #ffffff;
-         border-radius: 3px;
-         margin-right: 10px;
-         cursor: pointer;
-
-         &:hover {
-            border: 2px solid $accent;
-         }
-		}
-
-		&__btn {
-		}
-
-      &__agreement {
-         color: #505050;
+      &:hover::placeholder {
+         color: $titleColor;
       }
+	}
+
+   &__fild--textarea {
+      height: 165px;
+      max-width: 400px;
+      width: 100%;
+      resize: vertical;
+   }
+
+	&__label {
+	}
+
+	&__inputs {
+      margin-bottom: 30px;
+	}
+
+   &__fild--name {
+      margin-bottom: 10px;
+   }
+
+   &__fild.form-tab__fild--name,
+   &__fild.form-tab__fild--email {
+      max-width: 260px;
+
+      @include r(576) { 
+         max-width: 400px;
+         width: 100%;
+      }
+   }
+
+	&__checkbox-wrapper {
+      display: flex;
+      margin-bottom: 30px;
+	}
+
+   &__checkbox:focus .form-tab__checkbox-label {
+      border: 2px solid $accent;
+   }
+
+	&__checkbox:checked + .form-tab__checkbox-label::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: $accent;
+	}
+
+	&__checkbox-label {
+      position: relative;
+      display: block;
+      min-width: 24px;
+      height: 24px;
+      border: 1px solid $silverLight;
+      background-color: #ffffff;
+      border-radius: 3px;
+      margin-right: 10px;
+      cursor: pointer;
+
+      &:hover {
+         border: 2px solid $accent;
+      }
+	}
+
+	&__btn {
+	}
+
+   &__agreement {
+      color: #505050;
+   }
 }
 .stars {
    .Starry .Starry-star {

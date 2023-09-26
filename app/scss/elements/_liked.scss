@@ -1,34 +1,122 @@
 .liked {
+   @include r(576) { 
+         margin-bottom: 40px;
+      }
 
 	&__head {
       display: flex;
       justify-content: space-between;
       margin-bottom: 60px;
+
+      @include r(768) { 
+         margin-bottom: 45px;
+      }
+
+      @include r(576) { 
+         margin-bottom: 30px;
+      }
 	}
 
 	&__title {
       font-size: 36px;
       @extend %rubik-500;
+
+      @include r(768) { 
+         font-size: 24px;
+      }
+
+      @include r(576) { 
+         font-size: 20px;
+      }
 	}
 
 	&__arrows {
       display: flex;
       column-gap: 25px;
+
+      @include r(576) { 
+         display: none;;
+      }
 	}
 
-	&__prev {
+   &__button {
+      position: relative;
+      min-width: 34px;
+      height: 34px;
+      border: 3px solid $silver100;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+      outline: 0 solid transparent;
+      
+      &:focus {
+         outline: 2px solid #FF6838;
+      }
+
+      &:hover {
+         border: 3px solid #FFAE94;
+         background-color: #FFF2ED;
+      }
+
+      &:hover:after {
+         filter: invert(72%) sepia(37%) saturate(633%) hue-rotate(320deg) brightness(104%) contrast(101%);
+      }
+
+      &:active {
+         background-color: #FFF2ED;
+         border: 3px solid transparent;
+         outline: 0px solid transparent;
+      }
+
+
+      &:active::after {
+         filter: invert(54%) sepia(29%) saturate(5064%) hue-rotate(337deg) brightness(102%) contrast(101%);
+      }
+      
+      &::after {
+         content: '';
+         position: absolute;
+         top: 4px;
+         left: 4px;
+         width: 20px;
+         height: 20px;
+         outline: 0 solid transparent;
+         filter: invert(94%) sepia(0%) saturate(3510%) hue-rotate(115deg) brightness(94%) contrast(75%);
+      }
+   }
+
+	&__btn--prev {
+      &::after {
+         background-image: url('../images/sprite.svg#icon-left');
+      }
 	}
 
-	&__next {
+	&__btn--next {
+      &::after {
+         background-image: url('../images/sprite.svg#icon-right');
+      }
 	}
 
 	&__slider {
       padding: 2px 2px;
       margin-bottom: 120px;
+
+      @include r(576) { 
+         margin-bottom: 30px;
+      }
 	}
 
 	&__slider-wrapper {
 	}
+
+   &__dots {
+      display: none;
+
+      @include r(576) { 
+         display: block;
+         text-align: center;
+      }
+   }
 }
 
 

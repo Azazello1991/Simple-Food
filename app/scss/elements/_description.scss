@@ -1,3 +1,13 @@
 .swiper--product {
    margin-bottom: 60px;
 }
+
+.description {
+   &__bread-crumbs {
+      & > .container a:nth-last-child(2){
+         @include r(576) { 
+            display: none;
+         }
+      }
+   }
+}
