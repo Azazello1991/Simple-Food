@@ -186,13 +186,15 @@ if (rangeSlider) {
 };
 
 // Оновлення значень слайдера при зміні input-ів: !!!!!!!!
-// inputMin.addEventListener('change', function () {
-//    rangeSlider.noUiSlider.set([this.value, null]);
-// });
-
-// inputMax.addEventListener('change', function () {
-//    rangeSlider.noUiSlider.set([null, this.value]);
-// });
+if (galleryList) {
+   inputMin.addEventListener('change', function () {
+      rangeSlider.noUiSlider.set([this.value, null]);
+   });
+   
+   inputMax.addEventListener('change', function () {
+      rangeSlider.noUiSlider.set([null, this.value]);
+   });
+}
 
 
 // --------------- Event for news ------------ //
@@ -361,6 +363,7 @@ if (tabs) {
 // ---------------- swiper liked ----------------- //
 if (tabs) {
    const swiper = new Swiper('.liked__slider', {
+      loop: true,
      // Navigation arrows
       navigation: {
          nextEl: '.liked__btn--prev',
@@ -432,9 +435,9 @@ if (staticStars) {
          readOnly: true, // тільки для демонстрації рейтингу (без можливості голосування)
          beginWith: 20 * stars, // задається у % (Всего 100%). Тобто 20% * на 4 зірки(залежно скільки в data-stars="4") = 80% -це 4 зірки відповідно
          icons: { // перестилізовуємо ісонки
-            blank: '../images/sprite.svg#icon-star-blank',
-            hover: '../images/sprite.svg#icon-star-fill',
-            active: '../images/sprite.svg#icon-star-fill'
+            blank: './images/sprite.svg#icon-star-blank',
+            hover: './images/sprite.svg#icon-star-fill',
+            active: './images/sprite.svg#icon-star-fill'
          }
       });
    });
@@ -450,9 +453,9 @@ if (ratingStars) {
          name: `formStars`,
          readOnly: false, 
          icons: { // перестилізовуємо ісонки
-            blank: '../images/sprite.svg#icon-star-blank',
-            hover: '../images/sprite.svg#icon-star-fill',
-            active: '../images/sprite.svg#icon-star-fill'
+            blank: './images/sprite.svg#icon-star-blank',
+            hover: './images/sprite.svg#icon-star-fill',
+            active: './images/sprite.svg#icon-star-fill'
          }
       })
    })
